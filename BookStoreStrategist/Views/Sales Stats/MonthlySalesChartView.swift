@@ -22,12 +22,6 @@ struct MonthlySalesChartView: View {
                 AxisValueLabel(format: .dateTime.month(.abbreviated), centered: true)
             }
         }
-        .chartYAxis {
-            AxisMarks(position: .leading) { _ in
-                AxisGridLine()
-                AxisValueLabel()
-            }
-        }
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct BookStoreStrategistApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(salesViewModel: .preview)
         }
     }
 }
