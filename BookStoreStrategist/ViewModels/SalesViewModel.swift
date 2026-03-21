@@ -42,6 +42,11 @@ class SalesViewModel: ObservableObject {
         return salesByWeekday.sorted { $0.number < $1.number }
     }
     
+    var medianSales: Double {
+        let salesData = self.averageSalesByWeekday
+        return calculateMedian(salesData: salesData) ?? 0
+    }
+    
     init() {
         // fetch data from e.g. server
     }
@@ -102,9 +107,25 @@ class SalesViewModel: ObservableObject {
         return averageSales
     }
     
+    func calculateMedian(salesData: [(number: Int, sales: Double)]) -> Double? {
+        let quantities = salesData.map { $0.sales }.sorted()
+        let count = quantities.count
+        
+        if count % 2 == 0 {
+            // Even count: the median is average of the two middle numbers
+            let middleIndex = count / 2
+            let median = (quantities[middleIndex - 1] + quantities[middleIndex]) / 2
+            return Double(median)
+        } else {
+            // Odd count: the median is the middle number
+            let middleIndex = count / 2
+            return Double(quantities[middleIndex])
+        }
+    }
+    
     static var preview: SalesViewModel {
         let vm = SalesViewModel()
-        vm.salesData = Sale.threeMonthsExamples()
+        vm.salesData = Sale.higherWeekendThreeMonthsExamples
         vm.lastTotalSales = 500
         
         return vm
