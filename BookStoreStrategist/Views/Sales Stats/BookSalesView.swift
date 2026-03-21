@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailBookSalesView: View {
+struct BookSalesView: View {
     
     enum TimeInterval: String, CaseIterable, Identifiable {
         case day = "Day"
@@ -55,5 +55,5 @@ struct DetailBookSalesView: View {
 }
 
 #Preview {
-    DetailBookSalesView(salesViewModel: .preview)
+    BookSalesView(salesViewModel: .preview)
 }

@@ -16,7 +16,7 @@ struct ContentView: View {
             List {
                 Section {
                     NavigationLink {
-                        DetailBookSalesView(salesViewModel: salesViewModel)
+                        BookSalesView(salesViewModel: salesViewModel)
                     } label: {
                         SimpleBookSalesView(salesViewModel: salesViewModel)
                     }
