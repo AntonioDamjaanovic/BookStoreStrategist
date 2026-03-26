@@ -16,6 +16,15 @@ struct SimpleSalesPerBookCategoryView: View {
         HStack {
             SalesPerBookCategoryHeaderView(salesViewModel: salesViewModel)
             
+            Chart(salesViewModel.totalSalesPerCategory, id: \.category) { data in
+                SectorMark(angle: .value("Book Category", data.sales),
+                           innerRadius: .ratio(0.618),  // golden ratio
+                           angularInset: 1.5)
+                .cornerRadius(5)
+                .opacity(salesViewModel.bestSellingCategory?.category == data.category ? 1 : 0.3)
+            }
+            .aspectRatio(1, contentMode: .fit)
+            .frame(height: 70)
             
         }
     }
@@ -23,4 +32,5 @@ struct SimpleSalesPerBookCategoryView: View {
 
 #Preview {
     SimpleSalesPerBookCategoryView(salesViewModel: .preview)
+        .padding()
 }
