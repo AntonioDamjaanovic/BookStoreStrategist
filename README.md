@@ -1,8 +1,6 @@
-<div align="center">
-
 # BookStoreStrategist
 
-**Turn raw bookstore data into clear, actionable insights.**
+This is a multiplatform app that shows book store statitistics with the SwiftCharts API. You can see bar, pie, line, and scatter plots.
 
 [![Swift](https://img.shields.io/badge/Swift-5-F05138?logo=swift&logoColor=white)](https://swift.org)
 [![SwiftUI](https://img.shields.io/badge/SwiftUI-Framework-007AFF?logo=swift&logoColor=white)](https://developer.apple.com/xcode/swiftui/)
@@ -11,9 +9,7 @@
 
 <br>
 
-<video src="video/demo.mov" autoplay loop muted playsinline width="100%"></video>
-
-</div>
+<video src="video/demo.mp4" autoplay loop muted playsinline height="400px" width="400px"></video>
 
 <br>
 
