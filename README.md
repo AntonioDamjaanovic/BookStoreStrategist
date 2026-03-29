@@ -9,7 +9,7 @@ This is a multiplatform app that shows book store statitistics with the SwiftCha
 
 <br>
 
-<video src="https://github.com/user-attachments/assets/bb9cd2be-9a9c-4806-8f9c-3dd1497d0174" autoplay loop muted playsinline height="400px" width="400px"></video>
+<video src="https://github.com/user-attachments/assets/bb9cd2be-9a9c-4806-8f9c-3dd1497d0174" autoplay loop muted playsinline height="300px" width="300px"></video>
 
 <br>
 
