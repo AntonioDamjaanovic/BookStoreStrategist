@@ -19,7 +19,7 @@ class ExpensesViewModel: ObservableObject {
     init() {
         // fetch data from server
         
-        $expenses.sink { [unowned self] expense in
+        $expenses.sink { [unowned self] expenses in
             let fixedExpenses = self.expensesByMonth(for: .fixed, expenses: expenses)
             let variableExpenses = self.expensesByMonth(for: .variable, expenses: expenses)
             
