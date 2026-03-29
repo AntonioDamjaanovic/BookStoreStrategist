@@ -17,7 +17,7 @@ struct SalesByWeekdayHeaderView: View {
             Text("\(weekday(for: highestSellingWeekday.number)) ")
                 .bold()
                 .foregroundStyle(Color.accentColor) +
-            Text("\(Int(highestSellingWeekday.number)) sales per day.")
+            Text("\(Int(highestSellingWeekday.sales)) sales per day.")
                 .bold()
         }
     }

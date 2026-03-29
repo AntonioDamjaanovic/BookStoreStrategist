@@ -12,6 +12,7 @@ struct WeekySalesChartView: View {
     
     @ObservedObject var salesViewModel: SalesViewModel
     @State private var rawSelectedDate: Date? = nil
+    
     @Environment(\.calendar) var calendar
     
     var selectedDateValue: (day: Date, sales: Int)? {
@@ -54,6 +55,8 @@ struct WeekySalesChartView: View {
             VStack {
                 Text(selectedDateValue.day.formatted(.dateTime.month().day()))
                 Text("\(selectedDateValue.sales) sales")
+                    .bold()
+                    .foregroundStyle(.blue)
             }
             .padding(6)
             .background {

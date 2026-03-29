@@ -17,6 +17,13 @@ class SalesViewModel: ObservableObject {
         salesData.reduce(0) { $0 + $1.quantity }
     }
     
+    var maxSales: Double {
+        salesByWeekday
+            .flatMap { $0.sales }
+            .map { Double($0.quantity) }
+            .max() ?? 0
+    }
+    
     var salesByWeek: [(day: Date, sales: Int)] {
         let salesByWeek = salesGroupedByWeek(sales: salesData)
         return totalSalesPerDate(salesByDate: salesByWeek)

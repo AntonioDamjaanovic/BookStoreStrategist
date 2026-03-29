@@ -34,11 +34,11 @@ struct SalesByWeekdayView: View {
                 
                 if medianSalesIsShown {
                     RuleMark(y: .value("Median sales", salesViewModel.medianSales))
-                        .foregroundStyle(.indigo)
+                        .foregroundStyle(.blue)
                         .annotation(position: .top, alignment: .trailing) {
                             Text("Median: \(String(format: "%.2f", salesViewModel.medianSales))")
                                 .font(.body.bold())
-                                .foregroundStyle(.indigo)
+                                .foregroundStyle(.blue)
                         }
                 }
                 
@@ -47,16 +47,17 @@ struct SalesByWeekdayView: View {
                         ForEach(weekdayData.sales) { sale in
                             PointMark(x: .value("Day" ,weekday(for: weekdayData.number)),
                                       y: .value("Sales", sale.quantity))
-                                .opacity(0.3)
+                            .foregroundStyle(.indigo.opacity(0.25))
                         }
                     }
                 }
             }
             .aspectRatio(1, contentMode: .fit)
+            .chartYScale(domain: 0...salesViewModel.maxSales)
             
-            Toggle(individualDaysAreShown ? "Show all daily sales" : "Hide daily sales", isOn: $individualDaysAreShown.animation())
+            Toggle(individualDaysAreShown ? "Hide daily sales" : "Show all daily sales", isOn: $individualDaysAreShown.animation())
             
-            Toggle(medianSalesIsShown ? "Show median sales" : "Hide median sales", isOn: $medianSalesIsShown.animation())
+            Toggle(medianSalesIsShown ? "Hide median sales" : "Show median sales", isOn: $medianSalesIsShown.animation())
             
             Spacer()
         }

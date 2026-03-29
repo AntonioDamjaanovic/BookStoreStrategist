@@ -24,6 +24,7 @@ struct ExpensesDetailGridView: View {
             }
             
             Divider()
+                .gridCellUnsizedAxes([.vertical, .horizontal])
             
             ForEach(expensesViewModel.monthlyExpenseData) { data in
                 GridRow {
@@ -32,10 +33,12 @@ struct ExpensesDetailGridView: View {
                     Text(String(format: "%.2f", data.fixedExpenses))
                     Text(String(format: "%.2f", data.variableExpenses))
                     Text(String(format: "%.2f", data.totalExpenses))
+                        .bold()
                 }
             }
             
             Divider()
+                .gridCellUnsizedAxes([.vertical, .horizontal])
             
             GridRow {
                 Text("Total")
@@ -47,6 +50,7 @@ struct ExpensesDetailGridView: View {
                 Text("$" + String(format: "%.2f", expensesViewModel.totalExpenses))
                     .bold()
                     .foregroundStyle(.pink)
+                    .fixedSize()
             }
         }
     }

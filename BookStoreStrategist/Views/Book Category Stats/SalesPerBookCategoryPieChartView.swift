@@ -22,7 +22,7 @@ struct SalesPerBookCategoryPieChartView: View {
             .foregroundStyle(by: .value("Category", data.category.displayName))
         }
         .aspectRatio(1, contentMode: .fit)
-        .chartLegend(position: .bottom, spacing: 20)
+        .chartLegend(alignment: .center, spacing: 20)
         .chartBackground { chartProxy in
             GeometryReader { geometry in
                 let frame = geometry[chartProxy.plotFrame!]

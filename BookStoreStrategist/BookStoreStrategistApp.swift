@@ -11,7 +11,11 @@ import SwiftUI
 struct BookStoreStrategistApp: App {
     var body: some Scene {
         WindowGroup {
+            #if os(iOS)
             ContentView(salesViewModel: .preview)
+            #else
+            MacContentView()
+            #endif
         }
     }
 }
